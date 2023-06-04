@@ -33,6 +33,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Test with pytest
-      run: |
-        pytest makemytrip.py -vs
+    - name: Set environment variable
+      run: echo "CHROME_WEBDRIVER_TIMEOUT=10" >> $GITHUB_ENV
+    - name: Run tests
+      run: pytest makemytrip.py -vs
