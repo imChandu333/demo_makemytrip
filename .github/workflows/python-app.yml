@@ -18,6 +18,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+
+    - name: Install Chrome
+      run: |
+        winget install --I'd Google.Chrome -e
+
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
